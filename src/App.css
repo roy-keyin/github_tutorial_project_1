@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+body{
+  background-color: darkslategray;
+  color:blanchedalmond
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color:white;
+}
+nav *{
+  color:white;
 }
 
-.App-link {
-  color: #61dafb;
+nav *:visited{
+  color:white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SignIn{
+  position: absolute;
+  height:80vh;
+  width:60vw;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  background-color: cadetblue;
+  color:white;
+}
+
+.SignInForm{
+  height:100%;
+  width:100%;
+  display:grid;
+  justify-items: center;
+  align-content: center;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 30% 1fr 1fr 20% 2fr 40%;
+  grid-template-areas: 
+  "header header"
+  "username_label username_input"
+  "password_label password_input"
+  "buffer buffer"
+  "submit_button submit_button"
+  "buffer_two buffer_two";
+}
+
+.SignInForm > h1{
+  justify-self: center;
+  align-self:center;
+  grid-area:header;
+}
+
+.SignInForm > label[for="username"]{
+  grid-area: username_label;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.SignInForm > label[for="password"]{
+  grid-area: password_label;
+  margin-top:20px;
+  margin-bottom:20px;
+}  
+
+.SignInForm > input[name="username"]{
+  grid-area: username_input;
+  margin:20px;
+  width:80%;
+}
+
+.SignInForm > input[name="password"]{
+  grid-area: password_input;
+  margin:20px;
+  width:80%;
+}
+
+.SignInForm > button{
+  justify-self: center;
+  max-width: 80px;
+  grid-area: submit_button;
 }
