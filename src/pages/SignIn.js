@@ -26,6 +26,8 @@ function SignIn(props){
           console.log(`${username} : ${password}`)
           setUsername("");
           setPassword("");
+          console.log("Add yet another new log!");
+          console.log("TOO MANY LOGS!");
         }} type="button">Submit</button>
       </form>
     </div>
